@@ -20,5 +20,6 @@ ADD_EXECUTABLE(embedPython src/main.cpp)
 # Link executable with Python library.
 TARGET_LINK_LIBRARIES(embedPython ${PYTHON_LIBRARIES})
 
-ADD_LIBRARY(spammodule SHARED src/spammodule.cpp)
-TARGET_LINK_LIBRARIES(spammodule ${PYTHON_LIBRARIES})
+ADD_LIBRARY(spam MODULE src/spammodule.cpp)
+TARGET_LINK_LIBRARIES(spam ${PYTHON_LIBRARIES})
+SET_TARGET_PROPERTIES(spam PROPERTIES PREFIX "")
